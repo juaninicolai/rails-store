@@ -9,8 +9,8 @@ module Product::Notifications extend ActiveSupport::Concern
   end
 
   def notify_subscribers
-    subscribers.each do |subscribers|
-      ProductMailer.with(product: self, subscriber: subscriber).in_stock.deliver_layer
+    subscribers.each do |subscriber|
+      ProductMailer.with(product: self, subscriber: subscriber).in_stock.deliver_later
     end
   end
 end

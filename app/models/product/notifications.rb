@@ -14,3 +14,4 @@ module Product::Notifications extend ActiveSupport::Concern
     end
   end
 end
+
